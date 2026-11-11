@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Tools: Image Compressor, PDF to JPG, QR Code</title>
+<meta name="description" content="Free online tools that work in your browser: compress images, convert PDF to JPG, create QR codes and calculate age. No upload, no sign up.">
+<meta property="og:title" content="ToolsHub PK - Free Online Tools">
+<meta property="og:description" content="Compress images, convert PDF to JPG, make QR codes and calculate age. 100% free and private.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"ToolsHub PK","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Are these tools really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tools are free to use with no sign up and no limits."}},
+{"@type":"Question","name":"Are my files uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs inside your browser, so your photos and PDFs never leave your device."}},
+{"@type":"Question","name":"Will compressing an image reduce its quality?","acceptedAnswer":{"@type":"Answer","text":"A little, but you control the quality slider. Around 70 to 80 percent keeps the image looking sharp while cutting the size a lot."}},
+{"@type":"Question","name":"Does it work on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. The site is built for mobile phones and works in Chrome, Safari and Firefox."}},
+{"@type":"Question","name":"Why is my PDF not converting?","acceptedAnswer":{"@type":"Answer","text":"Password protected PDFs cannot be opened. Remove the password first and try again."}}
+]}
+</script>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--ink:#17202e;--muted:#5d6b7e;--brand:#2563eb;--brand2:#1d4ed8;--line:#e2e8f0;--ok:#16a34a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:#0f172a;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{font-weight:800;font-size:1.2rem;letter-spacing:.2px}
+.logo span{color:#60a5fa}
+.hero{padding:18px 0 28px}
+h1{font-size:1.65rem;line-height:1.25;margin:0 0 8px}
+.hero p{margin:0;color:#cbd5e1}
+.tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:-18px 0 14px}
+.tab{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px 8px;font-size:.95rem;font-weight:600;color:var(--ink);cursor:pointer;min-height:48px}
+.tab.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.panel{display:none}.panel.active{display:block}
+h2{font-size:1.25rem;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 14px;font-size:.95rem}
+label{display:block;font-weight:600;margin:12px 0 6px;font-size:.95rem}
+input[type=text],input[type=date],input[type=number],select,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:1rem;background:#fff;color:var(--ink)}
+input[type=range]{width:100%}
+.btn{display:inline-block;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:13px 18px;font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;margin-top:12px}
+.btn:hover{background:var(--brand2)}
+.btn.alt{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.drop{border:2px dashed #94a3b8;border-radius:12px;padding:22px 12px;text-align:center;color:var(--muted);cursor:pointer;background:#f8fafc}
+.drop strong{color:var(--brand)}
+.drop input{display:none}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.stat{background:#f1f5f9;border-radius:10px;padding:10px;text-align:center;font-size:.85rem;color:var(--muted)}
+.stat b{display:block;font-size:1.05rem;color:var(--ink)}
+.stat b.good{color:var(--ok)}
+.preview{max-width:100%;border-radius:10px;border:1px solid var(--line);margin-top:12px}
+.pages{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.page{border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center;font-size:.85rem}
+.page img,.page canvas{max-width:100%;height:auto;border-radius:6px}
+.page a{display:block;margin-top:6px;color:var(--brand);font-weight:700;text-decoration:none}
+.qrbox{text-align:center}
+.qrbox canvas{max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;margin-top:12px}
+.result{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.result .stat b{font-size:1.5rem;color:var(--brand)}
+.note{color:var(--muted);font-size:.85rem;margin-top:10px}
+.ad{min-height:90px;border:1px dashed #cbd5e1;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:.8rem;margin:16px 0}
+.how ol{padding-left:20px;margin:8px 0}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+summary{font-weight:600;cursor:pointer}
+details p{margin:8px 0 0;color:var(--muted)}
+footer{background:#0f172a;color:#94a3b8;text-align:center;padding:22px 16px;font-size:.9rem;margin-top:24px}
+footer a{color:#cbd5e1;margin:0 8px}
+.err{color:#dc2626;font-weight:600;margin-top:10px}
+@media(min-width:640px){h1{font-size:2.1rem}.tabs{grid-template-columns:repeat(4,1fr)}.pages{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="bar"><div class="logo">Tools<span>Hub</span> PK</div></div>
+    <div class="hero">
+      <h1>Free Online Tools That Work in Your Browser</h1>
+      <p>Compress images, convert PDF to JPG, create QR codes and calculate age. Fast, free and private. Your files never leave your phone.</p>
+    </div>
+  </div>
+</header>
 
+<main class="wrap">
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="compress">Image Compressor</button>
+    <button class="tab" data-tab="pdf">PDF to JPG</button>
+    <button class="tab" data-tab="qr">QR Code</button>
+    <button class="tab" data-tab="age">Age Calculator</button>
+  </div>
+
+  <!-- IMAGE COMPRESSOR -->
+  <section class="card panel active" id="compress">
+    <h2>Image Compressor</h2>
+    <p class="sub">Make photos smaller for WhatsApp, forms and websites.</p>
+    <label class="drop" for="imgFile"><strong>Tap to choose a photo</strong><br>JPG, PNG or WebP<input type="file" id="imgFile" accept="image/*"></label>
+    <label for="imgQ">Quality: <span id="imgQv">75</span>%</label>
+    <input type="range" id="imgQ" min="10" max="95" value="75">
+    <label for="imgW">Max width (pixels, optional)</label>
+    <input type="number" id="imgW" placeholder="e.g. 1280" min="100">
+    <div id="imgOut" style="display:none">
+      <div class="stats">
+        <div class="stat">Original<b id="sOrig">-</b></div>
+        <div class="stat">Compressed<b id="sNew">-</b></div>
+        <div class="stat">Saved<b class="good" id="sSave">-</b></div>
+      </div>
+      <img class="preview" id="imgPrev" alt="Compressed preview">
+      <a class="btn" id="imgDl" download="compressed.jpg">Download Image</a>
+    </div>
+    <div class="err" id="imgErr"></div>
+  </section>
+
+  <!-- PDF TO JPG -->
+  <section class="card panel" id="pdf">
+    <h2>PDF to JPG</h2>
+    <p class="sub">Turn every page of a PDF into a JPG image.</p>
+    <label class="drop" for="pdfFile"><strong>Tap to choose a PDF</strong><br>Up to 30 pages work best<input type="file" id="pdfFile" accept="application/pdf"></label>
+    <div class="note" id="pdfStatus"></div>
+    <div class="pages" id="pdfPages"></div>
+    <div class="err" id="pdfErr"></div>
+  </section>
+
+  <!-- QR CODE -->
+  <section class="card panel" id="qr">
+    <h2>QR Code Generator</h2>
+    <p class="sub">Create a QR code for a link, phone number or any text.</p>
+    <label for="qrText">Text or link</label>
+    <textarea id="qrText" rows="3" placeholder="https://example.com"></textarea>
+    <label for="qrSize">Size</label>
+    <select id="qrSize"><option value="256">Small (256 px)</option><option value="512" selected>Medium (512 px)</option><option value="1024">Large (1024 px)</option></select>
+    <button class="btn" id="qrGo">Create QR Code</button>
+    <div class="qrbox" id="qrBox" style="display:none">
+      <canvas id="qrCanvas"></canvas><br>
+      <a class="btn alt" id="qrDl" download="qrcode.png">Download PNG</a>
+    </div>
+    <div class="err" id="qrErr"></div>
+  </section>
+
+  <!-- AGE CALCULATOR -->
+  <section class="card panel" id="age">
+    <h2>Age Calculator</h2>
+    <p class="sub">Find your exact age in years, months and days.</p>
+    <label for="dob">Date of birth</label>
+    <input type="date" id="dob">
+    <button class="btn" id="ageGo">Calculate Age</button>
+    <div id="ageOut" style="display:none">
+      <div class="result">
+        <div class="stat">Years<b id="aY">0</b></div>
+        <div class="stat">Months<b id="aM">0</b></div>
+        <div class="stat">Days<b id="aD">0</b></div>
+      </div>
+      <p class="note" id="aNext"></p>
+    </div>
+    <div class="err" id="ageErr"></div>
+  </section>
+
+  <!-- Ad slot -->
+  <div class="ad">Ad space</div>
+
+  <section class="card how">
+    <h2>How to use</h2>
+    <ol>
+      <li>Choose a tool from the buttons above.</li>
+      <li>Add your file or type your text.</li>
+      <li>Tap the button and download the result.</li>
+    </ol>
+    <p class="note"><b>Private:</b> everything happens inside your browser. Nothing is uploaded to any server.</p>
+  </section>
+
+  <section class="card">
+    <h2>Frequently Asked Questions</h2>
+    <details><summary>Are these tools really free?</summary><p>Yes. All tools are free with no sign up and no limits.</p></details>
+    <details><summary>Are my files uploaded to a server?</summary><p>No. Everything runs inside your browser, so your photos and PDFs never leave your device.</p></details>
+    <details><summary>Will compressing an image reduce its quality?</summary><p>A little, but you control the quality slider. Around 70 to 80 percent keeps the image sharp while cutting the size a lot.</p></details>
+    <details><summary>Does it work on my phone?</summary><p>Yes. The site is built for mobile phones and works in Chrome, Safari and Firefox.</p></details>
+    <details><summary>Why is my PDF not converting?</summary><p>Password protected PDFs cannot be opened. Remove the password first and try again.</p></details>
+  </section>
+</main>
+
+<footer>
+  <div><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+  <p>&copy; <span id="yr"></span> ToolsHub PK. All rights reserved.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  $('yr').textContent=new Date().getFullYear();
+
+  // Tabs
+  var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
+  function show(name){
+    tabs.forEach(function(t){t.classList.toggle('active',t.dataset.tab===name)});
+    panels.forEach(function(p){p.classList.toggle('active',p.id===name)});
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.tab);try{history.replaceState(null,'','#'+t.dataset.tab)}catch(e){}})});
+  var h=location.hash.replace('#','');
+  if(['compress','pdf','qr','age'].indexOf(h)>-1)show(h);
+
+  function fmt(b){return b>1048576?(b/1048576).toFixed(2)+' MB':Math.round(b/1024)+' KB'}
+
+  // Image compressor
+  var imgFile=null,imgUrl=null;
+  function compress(){
+    $('imgErr').textContent='';
+    if(!imgFile)return;
+    var q=parseInt($('imgQ').value,10)/100,maxW=parseInt($('imgW').value,10)||0;
+    var img=new Image(),src=URL.createObjectURL(imgFile);
+    img.onload=function(){
+      var w=img.naturalWidth,h=img.naturalHeight;
+      if(maxW&&w>maxW){h=Math.round(h*maxW/w);w=maxW}
+      var c=document.createElement('canvas');c.width=w;c.height=h;
+      var ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(img,0,0,w,h);
+      c.toBlob(function(blob){
+        URL.revokeObjectURL(src);
+        if(!blob){$('imgErr').textContent='Could not compress this image.';return}
+        if(imgUrl)URL.revokeObjectURL(imgUrl);
+        imgUrl=URL.createObjectURL(blob);
+        $('imgPrev').src=imgUrl;$('imgDl').href=imgUrl;
+        $('sOrig').textContent=fmt(imgFile.size);$('sNew').textContent=fmt(blob.size);
+        var s=Math.max(0,Math.round((1-blob.size/imgFile.size)*100));
+        $('sSave').textContent=s+'%';
+        $('imgOut').style.display='block';
+      },'image/jpeg',q);
+    };
+    img.onerror=function(){$('imgErr').textContent='This file is not a valid image.'};
+    img.src=src;
+  }
+  $('imgFile').addEventListener('change',function(e){imgFile=e.target.files[0]||null;compress()});
+  $('imgQ').addEventListener('input',function(){$('imgQv').textContent=this.value;compress()});
+  $('imgW').addEventListener('change',compress);
+
+  // PDF to JPG
+  if(window.pdfjsLib){pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'}
+  $('pdfFile').addEventListener('change',function(e){
+    var f=e.target.files[0];if(!f)return;
+    $('pdfErr').textContent='';$('pdfPages').innerHTML='';
+    if(!window.pdfjsLib){$('pdfErr').textContent='PDF library failed to load. Check your internet and reload.';return}
+    $('pdfStatus').textContent='Reading PDF...';
+    var reader=new FileReader();
+    reader.onload=function(){
+      pdfjsLib.getDocument({data:new Uint8Array(reader.result)}).promise.then(function(pdf){
+        var n=pdf.numPages,i=1;
+        function next(){
+          if(i>n){$('pdfStatus').textContent='Done. '+n+' page(s) converted.';return}
+          $('pdfStatus').textContent='Converting page '+i+' of '+n+'...';
+          pdf.getPage(i).then(function(page){
+            var vp=page.getViewport({scale:2}),c=document.createElement('canvas');
+            c.width=vp.width;c.height=vp.height;
+            return page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise.then(function(){
+              var url=c.toDataURL('image/jpeg',0.9),d=document.createElement('div'),num=i;
+              d.className='page';
+              d.innerHTML='<img alt="Page '+num+'" src="'+url+'"><a download="page-'+num+'.jpg" href="'+url+'">Download page '+num+'</a>';
+              $('pdfPages').appendChild(d);
+              i++;next();
+            });
+          });
+        }
+        next();
+      }).catch(function(){$('pdfStatus').textContent='';$('pdfErr').textContent='Could not open this PDF. It may be password protected or damaged.'});
+    };
+    reader.readAsArrayBuffer(f);
+  });
+
+  // QR code
+  $('qrGo').addEventListener('click',function(){
+    $('qrErr').textContent='';
+    var text=$('qrText').value.trim();
+    if(!text){$('qrErr').textContent='Please type some text or a link first.';return}
+    if(!window.qrcode){$('qrErr').textContent='QR library failed to load. Check your internet and reload.';return}
+    try{
+      var qr=qrcode(0,'M');qr.addData(text);qr.make();
+      var n=qr.getModuleCount(),size=parseInt($('qrSize').value,10),margin=4,cell=Math.floor(size/(n+margin*2));
+      var total=cell*(n+margin*2),c=$('qrCanvas');
+      c.width=total;c.height=total;
+      var ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,total,total);ctx.fillStyle='#000';
+      for(var r=0;r<n;r++)for(var k=0;k<n;k++)if(qr.isDark(r,k))ctx.fillRect((k+margin)*cell,(r+margin)*cell,cell,cell);
+      $('qrDl').href=c.toDataURL('image/png');
+      $('qrBox').style.display='block';
+    }catch(e){$('qrErr').textContent='Text is too long for a QR code. Please shorten it.'}
+  });
+
+  // Age calculator
+  $('dob').max=new Date().toISOString().split('T')[0];
+  $('ageGo').addEventListener('click',function(){
+    $('ageErr').textContent='';
+    var v=$('dob').value;
+    if(!v){$('ageErr').textContent='Please choose your date of birth.';return}
+    var p=v.split('-').map(Number),now=new Date(),t=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var b=new Date(p[0],p[1]-1,p[2]);
+    if(b>t){$('ageErr').textContent='Date of birth cannot be in the future.';return}
+    var y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+    if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate()}
+    if(m<0){y--;m+=12}
+    $('aY').textContent=y;$('aM').textContent=m;$('aD').textContent=d;
+    var nb=new Date(t.getFullYear(),b.getMonth(),b.getDate());
+    if(nb<t)nb=new Date(t.getFullYear()+1,b.getMonth(),b.getDate());
+    var left=Math.round((nb-t)/86400000);
+    $('aNext').textContent=left===0?'Happy Birthday! Today is your birthday.':'Your next birthday is in '+left+' day(s).';
+    $('ageOut').style.display='block';
+  });
+})();
+</script>
+</body>
+          </html>
